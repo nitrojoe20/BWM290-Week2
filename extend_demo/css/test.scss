@@ -10,3 +10,9 @@ button {
   border: 0;
   padding: 10px 15px;
 }
+
+.cta{
+	@extend button;
+	width:250px;
+	text-align: center;
+}

@@ -19,6 +19,16 @@ $base: #f00;
   -o-border-radius: $radius;
 }
 
+//Extend
+
+.transition{
+  behavior: url(PIE.htc);
+  -moz-transition: background-color .3s ease-in;
+  -webkit-transition: background-color .3s ease-in;
+  -o-transition: background-color .3s ease-in;
+  transition: background-color .3s ease-in;
+}
+
 /* CSS Reset */
 html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code, em, img, small, strong, sub, sup, var,
@@ -184,11 +194,7 @@ ul li a {
   text-align: center;
   color: white;
   @include rounded;
-  behavior: url(PIE.htc);
-  -moz-transition: background-color .3s ease-in;
-  -webkit-transition: background-color .3s ease-in;
-  -o-transition: background-color .3s ease-in;
-  transition: background-color .3s ease-in;
+  @extend .transition;
 }
 ul li a:hover {
   background-color: $base;
