@@ -10,6 +10,14 @@ $basefont: "Comic Sans MS", sans-serif;
 $accent: #c2cF00;
 $base: #f00;
 
+//Mixin
+@mixin rounded($radius:7px){
+  border-radius: $radius;
+  behavior:url(PIE.htc);
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -o-border-radius: $radius;
+}
 
 /* CSS Reset */
 html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -78,17 +86,7 @@ body {
   box-shadow: -3px 0px 5px #000;
   behavior: url(PIE.htc);
 }
-header {
-  height: 125px;
-  background: transparent url(../images/logo.png) no-repeat 0 18px;
-  border-bottom: 2px solid #C2CF52;
-  position: relative;
-  margin-bottom: 25px;
-}
-header h1 {
-  text-indent: -9999px;
-  height: 44px;
-}
+
 .branding #logo {
   display: block;
   position: relative;
@@ -98,71 +96,86 @@ header h1 {
   overflow: hidden;
 }
 
-header form {
-  float: right;
-  margin-top: 45px;
-}
-header input {
-  position: relative;
-  height: 16px;
-  width: 150px;
-  border: 2px solid #4E4F48;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -o-border-radius: 7px;
-  border-radius: 7px;
-  behavior: url(PIE.htc);
-}
-header input[type="text"] {
-  padding: 5px;
-  background: url(../images/search.png) no-repeat 5px 5px;
-  padding-left: 30px;
-  font: bold italic 1.2em Georgia, "Times New Roman", Times, serif;
-  color: #ddd;
-}
-header input[type="submit"] {
-  height: 30px;
-  width: 40px;
-  font-weight: bold;
-}
+header{
+    height: 125px;
+    background: transparent url(../images/logo.png) no-repeat 0 18px;
+    border-bottom: 2px solid #C2CF52;
+    position: relative;
+    margin-bottom: 25px;
 
-header .account {
-  position: absolute;
-  top: 20px;
-  right: 145px;
+  h1 {
+    text-indent: -9999px;
+    height: 44px;
+  }
+
+   form {
+    float: right;
+    margin-top: 45px;
+  }
+   input {
+    position: relative;
+    height: 16px;
+    width: 150px;
+    border: 2px solid $accent;
+    @include rounded;
+  }
+   input[type="text"] {
+    padding: 5px;
+    background: url(../images/search.png) no-repeat 5px 5px;
+    padding-left: 30px;
+    font: bold italic 1.2em Georgia, "Times New Roman", Times, serif;
+    color: #ddd;
+  }
+   input[type="submit"] {
+    height: 30px;
+    width: 40px;
+    font-weight: bold;
+  }
+
+   .account {
+    position: absolute;
+    top: 20px;
+    right: 145px;
+  }
+   .account a {
+    display: block;
+    font-size: .9em;
+    color: #4E4F48;
+    padding-top: 0px;
+  }
+   .account a:hover { text-decoration: underline; }
+   .account a[href^="cart"] {
+    position: absolute;
+    right: -100px;
+    top: 0;
+    height: 50px;
+    width: 86px;
+    margin-top: 18px;
+  }
+   .account a[href^="cart"] img{
+    margin: -48px 25px 0 0;
+  }
+   p {
+    font-weight: bold;
+    margin-top: 12px;
+    text-align: right;
+  }
 }
-header .account a {
-  display: block;
-  font-size: .9em;
-  color: #4E4F48;
-  padding-top: 0px;
-}
-header .account a:hover { text-decoration: underline; }
-header .account a[href^="cart"] {
-  position: absolute;
-  right: -100px;
-  top: 0;
-  height: 50px;
-  width: 86px;
-  margin-top: 18px;
-}
-header .account a[href^="cart"] img{
-  margin: -48px 25px 0 0;
-}
-header p {
-  font-weight: bold;
-  margin-top: 12px;
+//End header nesting
+footer ul li {
+  float: left;
 }
 nav {
   height: 30px;
   margin: 45px 0 0;
   line-height: 30px;
   font-weight: bold;
-}
-nav ul li, footer ul li {
+
+ul li{
   float: left;
 }
-nav ul li a {
+
+ul li a {
   position: relative;
   width: 112px;
   float: left;
@@ -170,29 +183,24 @@ nav ul li a {
   margin-right: 5px;
   text-align: center;
   color: white;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -o-border-radius: 7px;
-  border-radius: 7px;
+  @include rounded;
   behavior: url(PIE.htc);
   -moz-transition: background-color .3s ease-in;
   -webkit-transition: background-color .3s ease-in;
   -o-transition: background-color .3s ease-in;
   transition: background-color .3s ease-in;
 }
-nav ul li a:hover {
+ul li a:hover {
   background-color: $base;
 }
 
-nav ul.account {
+ul.account {
   float: none;
   margin-top: 0;
   border: 1px solid #3FF;
 }
-
-header p {
-  text-align: right;
 }
+
 #main { hidden: overflow; overflow: auto; }
 #category #main { height: 468px; }
 #feature {  margin-bottom: 20px; float: left; position: relative; }
@@ -269,11 +277,7 @@ img { float: left; }
   z-index: 200;
   padding: 10px 0px 10px 10px;
   line-height: 50px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px;
-  behavior: url(PIE.htc);
+  @include rounded(10px);
 }
 #type li { float: left;  width: 190px; }
 #type li a {
@@ -407,25 +411,26 @@ p.reviewer { clear: both; font-size: .95em; margin: 15px 4px; }
 
 
 #sidebar {
-  margin: -48px 0 0 10px;
-  padding: 10px 15px 25px;
-  width: 130px;
-  height: 420px;
-  background-color: #4E4F48;
-  color: white;
-  float: right;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -o-border-radius: 15px;
-  border-radius: 15px;
-  behavior: url(PIE.htc);
-}
-#sidebar img {
-  margin-left: 15px;
-}
-#sidebar h3 {
-  margin: 5px 12px 10px;
-  font-size: 1.2em;
+    margin: -48px 0 0 10px;
+    padding: 10px 15px 25px;
+    width: 130px;
+    height: 420px;
+    background-color: #4E4F48;
+    color: white;
+    float: right;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    behavior: url(PIE.htc);
+
+   img {
+    margin-left: 15px;
+  }
+   h3 {
+    margin: 5px 12px 10px;
+    font-size: 1.2em;
+  }
 }
 
 #listing ul {

@@ -108,17 +108,6 @@ body {
   box-shadow: -3px 0px 5px #000;
   behavior: url(PIE.htc); }
 
-header {
-  height: 125px;
-  background: transparent url(../images/logo.png) no-repeat 0 18px;
-  border-bottom: 2px solid #C2CF52;
-  position: relative;
-  margin-bottom: 25px; }
-
-header h1 {
-  text-indent: -9999px;
-  height: 44px; }
-
 .branding #logo {
   display: block;
   position: relative;
@@ -127,99 +116,97 @@ header h1 {
   left: 0px;
   overflow: hidden; }
 
-header form {
-  float: right;
-  margin-top: 45px; }
-
-header input {
+header {
+  height: 125px;
+  background: transparent url(../images/logo.png) no-repeat 0 18px;
+  border-bottom: 2px solid #C2CF52;
   position: relative;
-  height: 16px;
-  width: 150px;
-  border: 2px solid #4E4F48;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -o-border-radius: 7px;
-  border-radius: 7px;
-  behavior: url(PIE.htc); }
+  margin-bottom: 25px; }
+  header h1 {
+    text-indent: -9999px;
+    height: 44px; }
+  header form {
+    float: right;
+    margin-top: 45px; }
+  header input {
+    position: relative;
+    height: 16px;
+    width: 150px;
+    border: 2px solid #c2cF00;
+    border-radius: 7px;
+    behavior: url(PIE.htc);
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px; }
+  header input[type="text"] {
+    padding: 5px;
+    background: url(../images/search.png) no-repeat 5px 5px;
+    padding-left: 30px;
+    font: bold italic 1.2em Georgia, "Times New Roman", Times, serif;
+    color: #ddd; }
+  header input[type="submit"] {
+    height: 30px;
+    width: 40px;
+    font-weight: bold; }
+  header .account {
+    position: absolute;
+    top: 20px;
+    right: 145px; }
+  header .account a {
+    display: block;
+    font-size: .9em;
+    color: #4E4F48;
+    padding-top: 0px; }
+  header .account a:hover {
+    text-decoration: underline; }
+  header .account a[href^="cart"] {
+    position: absolute;
+    right: -100px;
+    top: 0;
+    height: 50px;
+    width: 86px;
+    margin-top: 18px; }
+  header .account a[href^="cart"] img {
+    margin: -48px 25px 0 0; }
+  header p {
+    font-weight: bold;
+    margin-top: 12px;
+    text-align: right; }
 
-header input[type="text"] {
-  padding: 5px;
-  background: url(../images/search.png) no-repeat 5px 5px;
-  padding-left: 30px;
-  font: bold italic 1.2em Georgia, "Times New Roman", Times, serif;
-  color: #ddd; }
-
-header input[type="submit"] {
-  height: 30px;
-  width: 40px;
-  font-weight: bold; }
-
-header .account {
-  position: absolute;
-  top: 20px;
-  right: 145px; }
-
-header .account a {
-  display: block;
-  font-size: .9em;
-  color: #4E4F48;
-  padding-top: 0px; }
-
-header .account a:hover {
-  text-decoration: underline; }
-
-header .account a[href^="cart"] {
-  position: absolute;
-  right: -100px;
-  top: 0;
-  height: 50px;
-  width: 86px;
-  margin-top: 18px; }
-
-header .account a[href^="cart"] img {
-  margin: -48px 25px 0 0; }
-
-header p {
-  font-weight: bold;
-  margin-top: 12px; }
+footer ul li {
+  float: left; }
 
 nav {
   height: 30px;
   margin: 45px 0 0;
   line-height: 30px;
   font-weight: bold; }
-
-nav ul li, footer ul li {
-  float: left; }
-
-nav ul li a {
-  position: relative;
-  width: 112px;
-  float: left;
-  background-color: #c2cF00;
-  margin-right: 5px;
-  text-align: center;
-  color: white;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -o-border-radius: 7px;
-  border-radius: 7px;
-  behavior: url(PIE.htc);
-  -moz-transition: background-color .3s ease-in;
-  -webkit-transition: background-color .3s ease-in;
-  -o-transition: background-color .3s ease-in;
-  transition: background-color .3s ease-in; }
-
-nav ul li a:hover {
-  background-color: #f00; }
-
-nav ul.account {
-  float: none;
-  margin-top: 0;
-  border: 1px solid #3FF; }
-
-header p {
-  text-align: right; }
+  nav ul li {
+    float: left; }
+  nav ul li a {
+    position: relative;
+    width: 112px;
+    float: left;
+    background-color: #c2cF00;
+    margin-right: 5px;
+    text-align: center;
+    color: white;
+    border-radius: 7px;
+    behavior: url(PIE.htc);
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
+    behavior: url(PIE.htc);
+    -moz-transition: background-color .3s ease-in;
+    -webkit-transition: background-color .3s ease-in;
+    -o-transition: background-color .3s ease-in;
+    transition: background-color .3s ease-in; }
+  nav ul li a:hover {
+    background-color: #f00; }
+  nav ul.account {
+    float: none;
+    margin-top: 0;
+    border: 1px solid #3FF; }
 
 #main {
   hidden: overflow;
@@ -323,11 +310,11 @@ img {
   z-index: 200;
   padding: 10px 0px 10px 10px;
   line-height: 50px;
+  border-radius: 10px;
+  behavior: url(PIE.htc);
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px;
-  behavior: url(PIE.htc); }
+  -o-border-radius: 10px; }
 
 #type li {
   float: left;
@@ -516,13 +503,11 @@ p.reviewer {
   -o-border-radius: 15px;
   border-radius: 15px;
   behavior: url(PIE.htc); }
-
-#sidebar img {
-  margin-left: 15px; }
-
-#sidebar h3 {
-  margin: 5px 12px 10px;
-  font-size: 1.2em; }
+  #sidebar img {
+    margin-left: 15px; }
+  #sidebar h3 {
+    margin: 5px 12px 10px;
+    font-size: 1.2em; }
 
 #listing ul {
   line-height: 50px;

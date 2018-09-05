@@ -1,3 +1,32 @@
+/* another type of mixin */
+.box1, .box2, .box3 {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #C2CF52; }
+
+.box4 {
+  width: 50px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #C2CF52; }
+
+.box5 {
+  width: 240px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #C2CF52; }
+
+.box6 {
+  width: 20px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #C2CF52; }
+
 button, .cta {
   background-color: #C2CF52;
   color: #4E4F48;

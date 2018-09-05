@@ -2,6 +2,41 @@ $base:    #4E4F48;
 $accent:  #C2CF52;
 $basefont: "Trebuchet MS", san-serif; 
 
+//mixins
+@mixin box{
+	width:100px;
+	height:100px;
+	margin:10px;
+	padding:10px;
+	background-color:$accent;
+}
+
+/* another type of mixin */
+
+@mixin boxy($width:200px, $height:200px){
+	width:$width;
+	height:$height;
+	margin:10px;
+	padding:10px;
+	background-color:$accent;
+}
+
+.box1, .box2, .box3{
+	@include box;
+}
+
+.box4{
+	@include boxy(50px, 100px);
+}
+
+.box5{
+	@include boxy(240px);
+}
+
+.box6{
+	@include boxy(20px);
+}
+
 button {
   background-color: $accent; 
   color: $base;
